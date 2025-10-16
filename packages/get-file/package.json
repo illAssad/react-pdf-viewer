@@ -1,6 +1,6 @@
 {
   "name": "@illassad/react-pdf-viewer-get-file",
-  "version": "3.12.1-illassad.2",
+  "version": "3.12.1-illassad.3",
   "description": "A React component to view a PDF document",
   "license": "https://react-pdf-viewer.dev/license",
   "author": {
@@ -30,7 +30,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "@illassad/react-pdf-viewer-core": "3.12.1-illassad.2"
+    "@illassad/react-pdf-viewer-core": "3.12.1-illassad.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
