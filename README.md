@@ -1,70 +1,89 @@
-# React PDF viewer
+# react-pdf-viewer (Maintenance Fork)
 
-A React component to view a PDF document. It's written in TypeScript, and powered by React hooks completely.
+> **Note**: This is a maintained fork of the original [react-pdf-viewer](https://github.com/react-pdf-viewer/react-pdf-viewer) project, which appears to be no longer actively maintained. This fork includes critical bug fixes and improvements for production use.
 
-![React PDF viewer](https://raw.githubusercontent.com/react-pdf-viewer/react-pdf-viewer/master/assets/screenshot.png)
+## Why This Fork?
 
-```javascript
-// Core viewer
-import { Viewer } from '@react-pdf-viewer/core';
+The original `react-pdf-viewer` library (last updated with v3.12.0) is an excellent PDF viewer for React applications, but has not seen active maintenance. This fork addresses specific issues we encountered in production:
 
-// Plugins
-import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+### Fixes Included
 
-// Import styles
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+1. **Multi-keyword Search Sorting** - Search results are now properly sorted by page index and position when using multiple keywords
+2. **Smart Scroll Behavior** - Highlights only trigger scrolling when they are outside the viewport, preventing unnecessary jumps
+3. **Dependency Updates** - Fixed internal package dependencies and build artifacts
 
-// Create new plugin instance
-const defaultLayoutPluginInstance = defaultLayoutPlugin();
+## Installation
 
-<Viewer
-    fileUrl='/assets/pdf-open-parameters.pdf'
-    plugins={[
-        // Register plugins
-        defaultLayoutPluginInstance,
-        ...
-    ]}
-/>
+Published under the `@illassad` scope on npm:
+
+```bash
+npm install @illassad/react-pdf-viewer-core @illassad/react-pdf-viewer-search @illassad/react-pdf-viewer-default-layout
 ```
 
-## Features
+## Usage
 
-**Basic features**
+The API is identical to the original `@react-pdf-viewer` packages:
 
--   [x] Support password protected document
--   [x] Zooming: Support custom levels such as actual size, page fit, and page width
--   [x] Navigation between pages
--   [x] Can go to the first and last pages quickly
--   [x] Search for text
--   [x] Preview page thumbnails
--   [x] View and navigate the table of contents
--   [x] List and download attachments
--   [x] Rotating
--   [x] Text selection and hand tool modes
--   [x] Different scrolling modes
--   [x] Full screen mode
--   [x] Can open a file from local. Users can drag and drop a local file to view it
--   [x] Download file
--   [x] View the document properties
--   [x] Support SSR
--   [x] Print
--   [x] Theming
--   [x] Dark mode
--   [x] Accessibility
+```tsx
+import { Provider, Viewer } from '@illassad/react-pdf-viewer-core';
+import { searchPlugin } from '@illassad/react-pdf-viewer-search';
+import { defaultLayoutPlugin } from '@illassad/react-pdf-viewer-default-layout';
+import * as pdfjs from 'pdfjs-dist';
 
-**Customization**
+import '@illassad/react-pdf-viewer-core/lib/styles/index.css';
+import '@illassad/react-pdf-viewer-search/lib/styles/index.css';
+import '@illassad/react-pdf-viewer-default-layout/lib/styles/index.css';
 
--   [x] The toolbar can be customized easily
--   [x] All text items can be localized in another language
+function PDFViewer({ pdfUrl }) {
+    const searchPluginInstance = searchPlugin();
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
-## License
+    return (
+        <Provider
+            pdfApiProvider={pdfjs}
+            workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js"
+        >
+            <Viewer
+                fileUrl={pdfUrl}
+                plugins={[searchPluginInstance, defaultLayoutPluginInstance]}
+            />
+        </Provider>
+    );
+}
+```
 
-You have to purchase a Commercial License at the [official website](https://react-pdf-viewer.dev).
+## Version
 
-## About
+Current version: `3.12.1-illassad.3`
 
-This project is developed by _Nguyen Huu Phuoc_. I love building products and sharing knowledge.
+Based on: `@react-pdf-viewer` v3.12.0
 
--   [DEV](https://dev.to/phuocng)
--   [Github](https://github.com/phuocng)
+## Original Project
+
+All credit goes to the original author [Nguyen Huu Phuoc](https://twitter.com/nghuuphuoc) for creating this excellent PDF viewer library.
+
+- Original repository: https://github.com/react-pdf-viewer/react-pdf-viewer
+- Original documentation: https://react-pdf-viewer.dev
+
+## Changes from Original
+
+- Fixed search result sorting for multi-keyword searches
+- Fixed viewport visibility checking before scrolling to highlights
+- Updated package build process to work with scoped package names
+- Removed abandoned canvas dependency
+
+## Contributing
+
+This is a maintenance fork focused on keeping the library usable for production. If the original project resumes active development, we encourage using that instead.
+
+## Repository Structure
+
+This repository maintains the original structure:
+
+- `/packages` - Individual npm packages for different PDF viewer features
+- `/demo` - Demo applications
+- `/docs` - Documentation
+
+## Building
+
+The original build system is preserved. However, note that some packages may have build issues - the published npm packages include pre-built artifacts.
