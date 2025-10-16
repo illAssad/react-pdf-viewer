@@ -1,6 +1,6 @@
 {
   "name": "@illassad/react-pdf-viewer-toolbar",
-  "version": "3.12.1-illassad.1",
+  "version": "3.12.1-illassad.2",
   "description": "A React component to view a PDF document",
   "license": "https://react-pdf-viewer.dev/license",
   "author": {
@@ -27,25 +27,22 @@
   "main": "lib/index.js",
   "types": "lib/@types/index.d.ts",
   "files": [
-    "lib/cjs/*.*",
-    "lib/styles/*.*",
-    "lib/index.d.ts",
-    "lib/index.js"
+    "lib/**/*"
   ],
   "dependencies": {
-    "@illassad/react-pdf-viewer-core": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-full-screen": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-get-file": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-open": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-page-navigation": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-print": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-properties": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-rotate": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-scroll-mode": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-search": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-selection-mode": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-theme": "3.12.1-illassad.1",
-    "@illassad/react-pdf-viewer-zoom": "3.12.1-illassad.1"
+    "@illassad/react-pdf-viewer-core": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-full-screen": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-get-file": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-open": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-page-navigation": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-print": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-properties": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-rotate": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-scroll-mode": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-search": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-selection-mode": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-theme": "3.12.1-illassad.2",
+    "@illassad/react-pdf-viewer-zoom": "3.12.1-illassad.2"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

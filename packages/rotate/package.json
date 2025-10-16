@@ -1,6 +1,6 @@
 {
   "name": "@illassad/react-pdf-viewer-rotate",
-  "version": "3.12.1-illassad.1",
+  "version": "3.12.1-illassad.2",
   "description": "A React component to view a PDF document",
   "license": "https://react-pdf-viewer.dev/license",
   "author": {
@@ -27,13 +27,10 @@
   "main": "lib/index.js",
   "types": "lib/@types/index.d.ts",
   "files": [
-    "lib/styles.css",
-    "lib/cjs/*.js",
-    "lib/index.d.ts",
-    "lib/index.js"
+    "lib/**/*"
   ],
   "dependencies": {
-    "@illassad/react-pdf-viewer-core": "3.12.1-illassad.1"
+    "@illassad/react-pdf-viewer-core": "3.12.1-illassad.2"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
