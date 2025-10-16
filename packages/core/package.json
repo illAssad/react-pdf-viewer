@@ -43,5 +43,6 @@
     "js": "tsx ../../scripts/buildJs",
     "test": "jest --config ../../jest.config.js",
     "release": "npm publish --access public"
-  }
+  },
+  "dependencies": {}
 }
